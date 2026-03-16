@@ -18,6 +18,30 @@
   opacity: 0 !important;
   pointer-events: none !important;
 }
+/* Fix for extra blank spaces caused by unclosed/nested <p> tags */
+.paragraph-inner p:empty,
+.paragraph-inner p p:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+.paragraph-inner p p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.paragraph-inner p {
+  margin-top: 0;
+}
+/* Universal fix for unclosed/nested <p> tag spacing */
+p:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+p p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 </style>
 <script id="native-offers-popup-blocker-script">
 (function () {
